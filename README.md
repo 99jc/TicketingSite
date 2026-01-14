@@ -7,6 +7,6 @@
   - [festival](https://99jc.github.io/TicketingSite/public/festival.html)
   - [classic](https://99jc.github.io/TicketingSite/public/classic.html)
   - [sign-up](https://99jc.github.io/TicketingSite/public/sign-up.html)
-  - [login](https://99jc.github.io/TicketingSite/public/sign-in.html)
-  - [login](https://99jc.github.io/TicketingSite/public/sign-out.html)
+  - [login](https://99jc.github.io/TicketingSite/public/login.html)
+  - [logout](https://99jc.github.io/TicketingSite/public/sign-out.html)
   - [user-index](https://99jc.github.io/TicketingSite/public/user-index.html)
