@@ -73,9 +73,8 @@
           회원가입
         </button>
         <a
-          href=""
+          href="/"
           class="w-[400px] m-1 text-[20px] p-3 border border-black hover:bg-black hover:bg-opacity-10 rounded-sm text-center"
-          type="submit"
         >
           홈으로
         </a>
@@ -95,6 +94,8 @@
           },
           body: JSON.stringify(data),
         });
+
+        window.location.href = "/";
       }
 
       document

@@ -13,6 +13,7 @@
 
       <form
         class="flex-1 p-10 border bg-white rounded-xl mb-10 flex flex-col items-center shadow-md"
+        id="signInForm"
       >
         <div class="flex w-[400px] m-1 border border-black rounded-sm">
           <label
@@ -42,13 +43,40 @@
           로그인
         </button>
         <a
-          href="./sign-up.html"
+          href="./sign-up"
           type="button"
           class="w-[400px] m-1 text-[20px] p-3 border border-black bg-green-300 hover:bg-green-400 rounded-sm text-center"
         >
           회원가입
         </a>
+        <a
+          href="/"
+          class="w-[400px] m-1 text-[20px] p-3 border border-black hover:bg-black hover:bg-opacity-10 rounded-sm text-center"
+        >
+          홈으로
+        </a>
       </form>
     </div>
+    <script>
+      async function handleSubmit(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData.entries());
+
+        await fetch("/api/sign-in", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        window.location.href = "/";
+      }
+
+      document
+        .getElementById("signInForm")
+        .addEventListener("submit", handleSubmit);
+    </script>
   </body>
 </html>

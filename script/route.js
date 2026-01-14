@@ -1,5 +1,3 @@
-import { parse } from "url"; // 웹 주소 문자열을 구조적으로 분해하고 조작하기 위한 기본 내장 모듈
-
 export async function route(request, response, handle) {
   const pathname = request.url;
   console.log(pathname);
@@ -11,8 +9,8 @@ export async function route(request, response, handle) {
       request.on("data", (chunk) => (body += chunk));
       request.on("end", () => {
         const data = JSON.parse(body);
+        handle[pathname](response, data);
       });
-      await handle[pathname](response, data);
     } else {
       handle[pathname](response);
     }

@@ -11,5 +11,9 @@
   "description": "",
   "devDependencies": {
     "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "uuid": "^13.0.0"
   }
 }
