@@ -57,7 +57,7 @@ function moonLightPage(response) {
   response.write(moonLightPageView);
   if (user.id !== "") {
     response.write(
-      `<form class="flex justify-between" id="formSubmit"><input type="number" name="count" class="w-[50px]" value="0" /><input type="text" name="id" class="hidden" value="${user.id}" /><input type="text" name="concertId" class="hidden" value="${concert[0].id}" /><input type="text" name="performanceDate" class="hidden" value="${concert[0].date}" /><button type="submit" class="flex-1 bg-green-300 mx-3 rounded-lg hover:bg-green-400">예매하기</button></form>`
+      `<form class="flex justify-between" id="formSubmit"><input type="number" name="count" class="w-[50px]" value="0" /><input type="text" name="concertId" class="hidden" value="${concert[0].id}" /><button type="submit" class="flex-1 bg-green-300 mx-3 rounded-lg hover:bg-green-400">예매하기</button></form>`
     );
   }
   response.write(
@@ -94,7 +94,7 @@ function festivalPage(response) {
   response.write(festivalPageView);
   if (user.id !== "") {
     response.write(
-      `<form class="flex justify-between" id="formSubmit"><input type="number" name="count" class="w-[50px]" value="0" /><input type="text" name="id" class="hidden" value="${user.id}" /><input type="text" name="concertId" class="hidden" value="${concert[1].id}" /><input type="text" name="performanceDate" class="hidden" value="${concert[1].date}" /><button type="submit" class="flex-1 bg-green-300 mx-3 rounded-lg hover:bg-green-400">예매하기</button></form>`
+      `<form class="flex justify-between" id="formSubmit"><input type="number" name="count" class="w-[50px]" value="0" /><input type="text" name="concertId" class="hidden" value="${concert[1].id}" /><button type="submit" class="flex-1 bg-green-300 mx-3 rounded-lg hover:bg-green-400">예매하기</button></form>`
     );
   }
   response.write(
@@ -131,7 +131,7 @@ function classicPage(response) {
   response.write(classicPageView);
   if (user.id !== "") {
     response.write(
-      `<form class="flex justify-between" id="formSubmit"><input type="number" name="count" class="w-[50px]" value="0" /><input type="text" name="id" class="hidden" value="${user.id}" /><input type="text" name="concertId" class="hidden" value="${concert[2].id}" /><input type="text" name="performanceDate" class="hidden" value="${concert[2].date}" /><button type="submit" class="flex-1 bg-green-300 mx-3 rounded-lg hover:bg-green-400">예매하기</button></form>`
+      `<form class="flex justify-between" id="formSubmit"><input type="number" name="count" class="w-[50px]" value="0" /><input type="text" name="concertId" class="hidden" value="${concert[2].id}" /><button type="submit" class="flex-1 bg-green-300 mx-3 rounded-lg hover:bg-green-400">예매하기</button></form>`
     );
   }
   response.write(
@@ -200,9 +200,11 @@ function SignIn(response, data) {
 
 function reservation(response, data) {
   const reservationId = v4();
-  const { count, id, concertId, performanceDate } = data;
+  const { count, concertId } = data;
   db.query(
-    `INSERT INTO reservation VALUES('${reservationId}', '${concertId}', '${id}', '${count}', '${new Date().toLocaleDateString()}', '${performanceDate}')`
+    `INSERT INTO reservation VALUES('${reservationId}', '${concertId}', '${
+      user.id
+    }', '${count}', '${new Date().toLocaleDateString()}')`
   );
   response.writeHead(302, {
     Location: "/",
