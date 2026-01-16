@@ -13,7 +13,7 @@ const moonLightPageView = fs.readFileSync("../public/moonlight.html", "utf-8");
 const festivalPageView = fs.readFileSync("../public/festival.html", "utf-8");
 const classicPageView = fs.readFileSync("../public/classic.html", "utf-8");
 const reservationListPageView = fs.readFileSync(
-  "../public/reserveList.html",
+  "../public/reservationList.html",
   "utf-8"
 );
 
