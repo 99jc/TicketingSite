@@ -263,7 +263,7 @@ function reservationList(response) {
         </div>
         <a
           href="/"
-          class="w-[400px] m-1 text-[20px] p-3 border border-black hover:bg-black hover:bg-opacity-10 rounded-sm text-center"
+          class="w-[400px] m-[100px] text-[20px] p-3 border border-black hover:bg-black hover:bg-opacity-10 rounded-sm text-center"
           >홈으로
         </a>
       </div>
