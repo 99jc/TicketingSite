@@ -17,3 +17,4 @@
   - [login](https://99jc.github.io/TicketingSite/public/login.html)
   - [logout](https://99jc.github.io/TicketingSite/public/sign-out.html)
   - [user-index](https://99jc.github.io/TicketingSite/public/user-index.html)
+  - [reservationList](https://99jc.github.io/TicketingSite/public/reservationList)
