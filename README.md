@@ -1,6 +1,8 @@
-### 실행방법
+# 실행방법
 
-## 로컬: 폴더 안에 들어가서 터미널에 npm install 입력후 cd script이후 node index.js입력
+## 로컬
+
+- 폴더 안에 들어가서 터미널에 npm install 입력후 cd script이후 node index.js입력
 
 ## Github Page
 
